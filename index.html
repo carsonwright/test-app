@@ -1,0 +1,110 @@
+<html><head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<link href="http://bootswatch.com/cerulean/bootstrap.min.css" rel="stylesheet">
+<script src="http://cdn.ractivejs.org/latest/ractive.js"></script>
+<script src="/encapsulate.js"></script>
+<script src="/assets/main.js"></script>
+<link href="/assets/main.css" rel="stylesheet">
+
+</head>
+<body>
+  <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="#/birthdays">Birthdays</a>
+          </li>
+          <li>
+            <a href="#/names">Name</a>
+          </li>
+          <li>
+            <a href="#/result/abcd">Hello!</a>
+          </li>
+          <li>
+            <a href="#/books">Books!</a>
+          </li>
+          <li>
+            <a href="#/daniels">Daniels</a>
+          </li>
+          <li>
+            <a href="#/movies">Movies</a>
+          </li>
+        </ul>
+      </div>
+  </div>
+  <div class="container">
+    <div class="main"><div class="birthday"></div><div class="birthday"></div><div class="birthday"></div><div class="birthday"></div></div>
+  </div>
+  <template name="birthdays">
+    {{#birthdays }}
+      <div class="birthday">{{birthday}}</div>
+    {{/each }}
+  </template>
+  <template name="books">
+    <div class="books">
+      {{#books }}
+        <div class="book">{{title}}</div>
+      {{/books }}
+      <div class="form col-sm-5" data-name="book">
+        <input type="text" class="form-control title" placeholder="Title" data-name="title"/>
+        <div class="btn btn-default submit">Submit</div>
+      </div>
+    </div>
+  </template>
+  <template name="names">
+    <div class="names">
+      {{#names}}
+        <div class="name">
+          {{first}}
+          {{last}}
+        </div>
+      {{/names}}
+      <div class="form col-sm-5" data-name="name">
+        <input type="text" class="form-control" placeholder="First Name" data-name="first"/>
+        <input type="text" class="form-control" placeholder="Last Name" data-name="last"/>
+        <div class="btn btn-default submit">Submit</div>
+      </div>
+    </div>
+  </template>
+  <template name="daniels">
+    <div class="daniels">
+      {{#daniels}}
+        <div class="name">
+          {{here}}
+          {{there}}
+        </div>
+      {{/names}}
+      <div class="form col-sm-5" data-name="daniel">
+        <input type="text" class="form-control" placeholder="Where Here" data-name="here"/>
+        <input type="text" class="form-control" placeholder="WHere there" data-name="there"/>
+        <div class="btn btn-default submit">Submit</div>
+      </div>
+    </div>
+  </template>
+    
+  <template name="movies">
+    <div class="movies">
+      {{#movies}}
+        <div class="title">
+          {{name}}
+        </div>
+        <div class="description">
+          {{description}}
+        </div>
+        <div class="description">
+          {{tags}}
+        </div> 
+      {{/movies}}
+      <div class="form col-sm-5" data-name="movie">
+        <input type="text" class="form-control" placeholder="Name" data-name="name"/>
+        <input type="text" class="form-control" placeholder="Description" data-name="description"/>
+        <input type="text" class="form-control" placeholder="tags" data-name="tags"/>
+        <div class="btn btn-default submit">Submit</div>
+      </div>
+    </div>
+  </template>
+    
+    
+</body></html>
